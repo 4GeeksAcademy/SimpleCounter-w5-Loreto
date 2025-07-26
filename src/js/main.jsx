@@ -8,11 +8,18 @@ import "bootstrap"
 // index.css'
 import '../styles/index.css'
 
-// components
-import Home from './components/Home';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>,
-)
+
+//component
+import SecondsCounter from './components/SecondsCounter';
+
+const root = ReactDOM.createRoot(document.querySelector("#root"));
+
+//let counter = 0;
+let counter = 0
+setInterval(() => {
+    root.render(<SecondsCounter seconds={counter} />);
+    counter++;
+}, 1000);
+
+
